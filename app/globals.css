@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .sidebar {
+    flex-basis: 100px;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -26,14 +32,19 @@ html, body {
   width: 100%;
 }
 
-main .insights {
+/* Dashboard */
+home {
+  margin-top: 1.4rem;
+}
+
+home .insights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
 }
 
-main .insights > div {
-  background: #fff;
+home .insights > div {
+  background: var(--colour-white);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
   margin-top: 1rem;
@@ -41,62 +52,33 @@ main .insights > div {
   transition: all 300ms ease;
 }
 
-main .insights > div:hover{
+home .insights > div:hover {
   box-shadow: none;
 }
 
-main .insights > div span{
-  background: coral;
-  padding: 0.5rem;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 2rem;
-}
-
-main .insights > div .middle{
+home .insights > div .middle {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-main .insights h3{
+home .insights h3 {
   margin: 1rem 0 0.6rem;
   font-size: 1rem;
 }
 
-main .insights .progress{
-  position: relative;
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
+/* Transcations */
+
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 4px;
 }
 
-main .insights svg{
-  width: 7rem;
-  height: 7rem;
-}
-
-main .insights svg circle{
-  fill: none;
-  stroke: red;
-  stroke-width: 14;
-  stroke-linecap: round;
-  transform: translate(5px, 5px);
-  stroke-dasharray: 110;
-  stroke-dashoffset: 92;
-}
-
-main .insights .mspent svg circle{
-  stroke-dashoffset: -30;
-  stroke-dasharray: 200;
-}
-
-main .insights .climit svg circle{
-  stroke-dashoffset: 20;
-  stroke-dasharray: 80;
-}
-
-main .insights .cscore svg circle{
-  stroke-dashoffset: 110;
-  stroke-dasharray: 200;
+.progress-bar {
+  height: 30px;
+  width: 0;
+  background-color: #4CAF50;
+  border-radius: 4px;
+  transition: width 0.4s ease-in-out; /* smooth transition effect */
 }

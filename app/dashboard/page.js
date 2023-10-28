@@ -1,76 +1,62 @@
 import Image from 'next/image'
-import Layout from '@/componets/layout'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Layout from '@/componets/layout/layout'
+import { CircularProgress } from '@mui/material'
+import CurrencyPoundIcon from '@mui/icons-material/CurrencyPound';
+
 export default function Dashboard() {
+  var date = new Date();
   return (
     <Layout>
-        <div className='insights'>
-            <div className='mspent'>
-                <FontAwesomeIcon icon="fa-solid fa-sterling-sign" />
-                <div className='middle'>
-                    <div className='left'>
-                        <h3>Total Expenditure</h3>
-                        <h1>£500</h1>
-                        {/* add total amount borrowed between the h1 */}
-                        <div className='progress'>
-                            <svg>
-                                <circle cx={'38'} cy={'38'} r={'36'}></circle>
-                            </svg>
-                            <div className='number'>
-                                <p>50%</p>
-                                {/* within p add some coding to calculate the percentage of credit limit used (example if limit is 100 and the total spent is 50 the percentage would be 50%) */}
-                            </div>
+        {/* <FontAwesomeIcon icon={faCreditCard} /> */}
+        <home>
+            <h1>Dashboard</h1>
+            <div>{date.getDate()}/{date.getMonth()}/{date.getFullYear()}</div>
+            <div className="insights">
+                <div className="spent">
+                    <CurrencyPoundIcon />
+                    <div className="middle">
+                        <div className="left">
+                            <h3>Expenditures</h3>
+                            {/* below here add money spent by pulling from API */}
+                            <h1>£500</h1>
+                        </div>
+                        <div className="progress">
+                            <CircularProgress color='secondary' thickness={8} size={50} variant="determinate" value={50} />
                         </div>
                     </div>
                 </div>
-                <small className='text-muted'>Last 24 hours</small>
-            </div>
-            {/* END OF MONEY SPENT */}
+                {/* -----END OF EXPENDITURES----- */}
 
-            <div className='climit'>
-                <FontAwesomeIcon icon="fa-solid fa-sterling-sign" />
-                <div className='middle'>
-                    <div className='left'>
-                        <h3>Card Limit</h3>
-                        <h1>£2,000</h1>
-                        {/* add total amount borrowed between the h1 */}
-                        <div className='progress'>
-                            <svg>
-                                <circle cx={'38'} cy={'38'} r={'36'}></circle>
-                            </svg>
-                            <div className='number'>
-                                <p>50%</p>
-                                {/* within p add some coding to calculate the percentage of credit limit used (example if limit is 100 and the total spent is 50 the percentage would be 50%) */}
-                            </div>
+                <div className="limit">
+                    <div className="middle">
+                        <div className="left">
+                            <h3>Card Limit</h3>
+                            {/* below here add credit limit by pulling from API */}
+                            <h1>£1000</h1>
+                        </div>
+                        <div className="progress">
+                            <CircularProgress color='success' thickness={8} size={50} variant="determinate" value={50} />
                         </div>
                     </div>
                 </div>
-                <small className='text-muted'>Last 24 hours</small>
-            </div>
-            {/* END OF CREDIT LIMIT */}
+                {/* -----END OF LIMIT----- */}
 
-            <div className='cscore'>
-                <FontAwesomeIcon icon="fa-solid fa-star" />
-                <div className='middle'>
-                    <div className='left'>
-                        <h3>Credit Score</h3>
-                        <h1>580</h1>
-                        {/* add credit score between the h1 */}
-                        <div className='progress'>
-                            <svg>
-                                <circle cx={'38'} cy={'38'} r={'36'}></circle>
-                            </svg>
-                            <div className='number'>
-                                <p>47%</p>
-                                {/* calculate how good the score is in percentage */}
-                            </div>
+                <div className="score">
+                    <div className="middle">
+                        <div className="left">
+                            <h3>Credit Score</h3>
+                            {/* below here add credit score by pulling from API */}
+                            <h1>480</h1>
+                        </div>
+                        <div className="progress">
+                            {/* below calculate the percentage depending on the credit pulled */}
+                            <CircularProgress color='inherit' thickness={8} size={50} variant="determinate" value={(100*480)/850} />
                         </div>
                     </div>
                 </div>
-                <small className='text-muted'>Last 24 hours</small>
+                {/* -----END OF SCORE----- */}
             </div>
-            {/* END OF CREDIT SCORE */}
-        </div>
+        </home>
     </Layout>
   )
 }
