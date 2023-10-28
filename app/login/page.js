@@ -8,7 +8,7 @@ export default function Login() {
       </div>
       <div className='basis-1/2'>
         <div>
-          <div className="text-center ">Login</div>
+          <div className="text-center text-[60px] font-bold">Login</div>
           <div id="fistrow">Username</div>
           <div id="password" >Password</div>
         </div>
