@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .sidebar {
+    flex-basis: 100px;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --colour-light: rgba(132, 139, 200, 0.18);
+  --colour-white: #fff;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--colour-light);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Dashboard */
+home {
+  margin-top: 1.4rem;
+}
+
+home .insights > div {
+  background: var(--colour-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+home .insights > div:hover {
+  box-shadow: none;
+}
+
+home .insights > div .middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+home .insights h3 {
+  margin: 1rem 0 0.6rem;
+  font-size: 1rem;
+}
+
+progress {
+  width: 100px;
+  height: 100px;
+  float: right;
+}
+
+home .history {
+  margin-top: 2rem;
+  background-color: var(--colour-white);
+  width: 60%;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+home .history h2 {
+  margin-bottom: 0.8rem;
+}
+
+home .history:hover {
+  box-shadow: none;
+}
+
+home .notifications {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  background-color: var(--colour-white);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+home .notifications h2 {
+  margin-bottom: 0.8rem;
+}
+
+home .notifications:hover {
+  box-shadow: none;
+}
+
+home .notifications > table {
+  width: 80%;
+  margin: 20px;
+  border-collapse: collapse;
+}
+
+/* Transcations */
+
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+}
+
+.progress-bar {
+  height: 30px;
+  width: 0;
+  background-color: #4CAF50;
+  border-radius: 4px;
+  transition: width 0.4s ease-in-out; /* smooth transition effect */
+}
+
+/* ACHIEVEMENTS */
+
+.creditLevels {
+  margin-top: 1.4rem;
+  width: 90%;
+}
+
+.creditLevels .insights {
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding-bottom: 80px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.creditLevels .insights > div {
+  flex-shrink: 0;
+  background: var(--colour-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+.creditLevels >.insights > div:hover {
+  box-shadow: none;
+}
+
+.creditLevels .insights > div .middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.creditLevels .insights h3 {
+  margin: 1rem 0 0.6rem;
+  font-size: 1rem;
+}
+
+.creditLevels .objectives {
+  margin-top: 2rem;
+  background-color: var(--colour-white);
+  width: 60%;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+.creditLevels .objectives h2 {
+  margin-bottom: 0.8rem;
+}
+
+.creditLevels .objectives:hover {
+  box-shadow: none;
+}
+
+.creditLevels .objectives > table {
+  border-collapse: collapse;
+  text-align: center;
+}
