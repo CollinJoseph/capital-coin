@@ -17,7 +17,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import useSessionStorage from '@/components/session'
 
-const API_URL = 'https://t8zsjnl5-3001.uks1.devtunnels.ms'; 
+const API_URL = 'http://localhost:3001'; 
 
 export default function Dashboard() {
   var date = new Date();

@@ -27,7 +27,7 @@ const theme = createTheme({
   },
 });
 
-const API_URL = 'https://t8zsjnl5-3001.uks1.devtunnels.ms'; 
+const API_URL = 'http://localhost:3001'; 
 // Transaction component definition
 export default function Transaction() {
   
